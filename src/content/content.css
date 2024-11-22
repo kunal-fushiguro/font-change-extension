@@ -1,0 +1,6 @@
+/* Default styles for body to ensure font changes are noticeable */
+body {
+  transition: font-family 0.3s ease;
+}
+
+/* Add any additional styling for improved appearance */

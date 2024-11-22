@@ -1,0 +1,1 @@
+chrome.runtime.onInstalled.addListener(()=>{console.log("Font Changer installed!")});chrome.tabs.onUpdated.addListener(async(e,n,o)=>{if(n.status==="complete"&&e&&o.url){const{fontFamily:t}=await chrome.storage.sync.get("fontFamily");t&&(chrome.scripting.executeScript({target:{tabId:e},files:["content/content.js"]}),chrome.tabs.sendMessage(e,{type:"changeFont",fontFamily:t}))}});

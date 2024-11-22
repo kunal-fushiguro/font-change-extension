@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Font Changer",
+  "version": "1.0.0",
+  "description": "Change fonts on any website.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"]
+    }
+  ]
+}

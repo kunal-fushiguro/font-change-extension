@@ -1,0 +1,1 @@
+var n;(n=document.getElementById("apply-font"))==null||n.addEventListener("click",async()=>{const t=document.getElementById("font-input").value,[e]=await chrome.tabs.query({active:!0,currentWindow:!0});e.id&&chrome.tabs.sendMessage(e.id,{type:"changeFont",fontFamily:t}),chrome.storage.sync.set({fontFamily:t})});
